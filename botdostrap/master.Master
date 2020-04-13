@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.Master.cs" Inherits="botdostrap.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
+
+    <script>
+        function apenasNumeros(evt) {
+            // Apenas números
+            if (window.event) { // IE
+                var charCode = evt.keyCode;
+            } else if (evt.which) { // Safari 4, Firefox 3.0.4
+                var charCode = evt.which
+            }
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+
+</script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="Home.aspx">
+            <img src="image/fundo.jpg" class="img-fluid" width="90" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ConteudoSuportado" aria-controls="ConteudoSuportado"
+            aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="ConteudoSuportado">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Home.aspx">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Adicao.aspx">Adicao</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Subtracao.aspx">Subtracao</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Divisao.aspx">Divisao</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Multiplicacao.aspx">Multiplicacao</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="alert alert-primary" role="alert">
+  ESTEVAO -- TETE
+</div>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
